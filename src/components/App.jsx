@@ -1,11 +1,17 @@
-
 // import { useState, useEffect } from 'react';
 import { Container } from './Container/Container';
 import { GlobalStyle } from './GlobalStyles/GlobalStyles';
 import { Phonebook } from './Phonebook/Phonebook';
 import { Contacts } from './Contacts/Contacts';
 import { Filter } from './Filter/Filter';
-import { Title, MainTitle } from './App.styled';
+import { Title, MainTitle } from '../pages/ContactsPage.styled';
+import { Routes, Route } from 'react-router-dom';
+import { Layout } from './Layout/Layout';
+import HomePage from '../pages/HomePage';
+import RegisterPage from '../pages/RegisterPage';
+import LoginPage from '../pages/LoginPage';
+import ContactsPage from 'pages/ContactsPage';
+
 
 // const LOCAL_STORAGE_KEY = 'contacts';
 export const App = () => {
@@ -52,18 +58,30 @@ export const App = () => {
   // };
   // const visibleUsers = filterUser();
   return (
-    <Container>
+    <>
       <GlobalStyle />
-      <MainTitle>Phonebook</MainTitle>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="contacts" element={<ContactsPage/>}/>
+        </Route>
+      </Routes>
+
+      {/* <MainTitle>Phonebook</MainTitle>
       <Phonebook />
       <Title>Contacts</Title>
-      <Filter/>
-      <Contacts />
-    </Container>
+      <Filter />
+      <Contacts /> */}
+    </>
   );
 };
 
 
-      // <Filter value={filter} onChangeFilter={changeFilter} />;
 
 
+
+
+
+// <Filter value={filter} onChangeFilter={changeFilter} />;

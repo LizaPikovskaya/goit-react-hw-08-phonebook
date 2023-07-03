@@ -10,9 +10,9 @@ import {
 } from './builderAsyncReducers';
 
 const arrayTHunk = [fetchContacts, deleteContact, addContact];
-const handlerActionCreatorByStatus = (type) => {
-  return arrayTHunk.map(item => item[type])
-}
+const handlerActionCreatorByStatus = type => {
+  return arrayTHunk.map(item => item[type]);
+};
 const contactsInitialState = {
   items: [],
   isAdding: false,
@@ -34,11 +34,7 @@ export const contactsSlice = createSlice({
         isAnyOf(...handlerActionCreatorByStatus('rejected')),
         handlerError
       );
-  }
-
-
-
-
+  },
 
   // =======WITHOUT BUILDER========
 

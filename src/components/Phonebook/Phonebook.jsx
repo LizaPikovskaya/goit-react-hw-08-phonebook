@@ -3,16 +3,15 @@ import { Button, Label, Wrapper } from './Phonebook.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/thunk';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/thunk';
 import { Loader } from 'components/Loader/Loader';
-
 
 export const Phonebook = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const dispatch = useDispatch();
-  const {items: contacts, isAdding} = useSelector(selectContacts);
+  const { items: contacts, isAdding } = useSelector(selectContacts);
   const handleOnChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'name':
@@ -27,7 +26,8 @@ export const Phonebook = () => {
   };
   const handleOnSubmit = event => {
     event.preventDefault();
-    if(!name.trim() || !number.trim()) return toast.warn('Please,fill the field.')
+    if (!name.trim() || !number.trim())
+      return toast.warn('Please,fill the field.');
     const arrayOfNames = [];
     contacts.forEach(user => {
       arrayOfNames.push(user.name.toLowerCase());
@@ -35,7 +35,7 @@ export const Phonebook = () => {
     if (arrayOfNames.includes(name.toLowerCase())) {
       return toast.warn(`${name} is already in contacts.`);
     } else {
-      dispatch(addContact({name, number}));
+      dispatch(addContact({ name, number }));
     }
     reset();
   };

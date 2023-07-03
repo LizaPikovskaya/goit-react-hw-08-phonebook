@@ -1,9 +1,9 @@
 import { Wrapper } from 'components/Phonebook/Phonebook.styled';
 import { List } from './Contacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectContacts, selectFilter } from 'redux/selectors';
+import { selectContacts, selectFilter } from 'redux/contacts/selectors';
 import { useEffect, useState } from 'react';
-import { deleteContact, fetchContacts } from 'redux/thunk';
+import { deleteContact, fetchContacts } from 'redux/contacts/thunk';
 import { DeletingLoader } from 'components/Loader/Loader';
 
 export const Contacts = () => {

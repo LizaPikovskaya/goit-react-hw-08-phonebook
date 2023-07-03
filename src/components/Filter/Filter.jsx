@@ -1,7 +1,7 @@
 import { Label } from './Filter.styled';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { filterUser } from 'redux/filterSlice';
+import { filterUser } from 'redux/contacts/filterSlice';
 
 export const Filter = () => {
   const [filter, setFilter] = useState('');
