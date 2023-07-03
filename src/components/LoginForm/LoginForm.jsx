@@ -1,7 +1,7 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import { Button, FormStyled, Input, Label } from './LoginForm.styled';
- import * as Yup from 'yup';
-import { object, string, number, date, InferType } from 'yup';
+//  import * as Yup from 'yup';
+import { object, string} from 'yup';
 
 const loginSchema = object({
   email: string().email('Invalid email').required(),

@@ -1,10 +1,5 @@
 // import { useState, useEffect } from 'react';
-import { Container } from './Container/Container';
 import { GlobalStyle } from './GlobalStyles/GlobalStyles';
-import { Phonebook } from './Phonebook/Phonebook';
-import { Contacts } from './Contacts/Contacts';
-import { Filter } from './Filter/Filter';
-import { Title, MainTitle } from '../pages/ContactsPage.styled';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import HomePage from '../pages/HomePage';

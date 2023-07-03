@@ -1,11 +1,11 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import {
   Button,
   FormStyled,
   Input,
   Label,
 } from '../LoginForm/LoginForm.styled';
-import { object, string, number, date, InferType } from 'yup';
+// import { object, string, number, date, InferType } from 'yup';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/thunk';
 
