@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { selectContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/thunk';
-import { Loader } from 'components/Loader/Loader';
+import { AddingLoader, Loader } from 'components/Loader/Loader';
 
 export const Phonebook = () => {
   const [name, setName] = useState('');
@@ -75,7 +75,7 @@ export const Phonebook = () => {
         </Label>
 
         <Button type="submit" disabled={isAdding}>
-          {isAdding ? <Loader /> : 'Add contact'}
+          {isAdding ? <AddingLoader /> : 'Add contact'}
         </Button>
       </form>
     </Wrapper>

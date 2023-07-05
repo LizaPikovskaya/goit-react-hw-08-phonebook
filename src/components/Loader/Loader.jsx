@@ -1,6 +1,27 @@
 import { RotatingTriangles, Oval } from 'react-loader-spinner';
+import { BallTriangle } from 'react-loader-spinner';
+import { Backdrop, WrapperForLoader } from './Loader.styled';
 
 export const Loader = () => {
+  return (
+    <Backdrop>
+      <WrapperForLoader>
+        <BallTriangle
+          height={100}
+          width={100}
+          radius={5}
+          color="orange"
+          ariaLabel="ball-triangle-loading"
+          wrapperClass={{}}
+          wrapperStyle=""
+          visible={true}
+        />
+      </WrapperForLoader>
+    </Backdrop>
+  );
+};
+
+export const AddingLoader = () => {
   return (
     <div style={{display: 'flex', justifyContent: 'center'}}>
       <RotatingTriangles

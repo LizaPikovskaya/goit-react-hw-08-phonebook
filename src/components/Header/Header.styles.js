@@ -5,14 +5,12 @@ export const HeaderStyled = styled.header`
   left: 0;
   position: sticky;
   z-index: 1100;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  min-height: 64px;
-  padding-right: 24px;
-  padding-left: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  /* min-height: 64px; */
+  /* padding-right: 24px;
+  padding-left: 24px; */
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /* min-height: 81px; */
   color: #fff;
   background-color: #ffa07a;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),

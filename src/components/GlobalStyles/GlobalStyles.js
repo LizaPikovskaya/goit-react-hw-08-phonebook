@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
+
   body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -23,7 +24,10 @@ a {
   text-decoration: none;
   font-size: 22px;
   font-weight: 600;
-  margin-right: 50px;
+}
+
+p,h1,h2,h3 {
+  margin: 0;
 }
 .error-message {
   font-size: 16px;

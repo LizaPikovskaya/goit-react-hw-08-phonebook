@@ -1,10 +1,13 @@
 import { Container } from 'components/Container/Container';
+import { Section, Title } from 'components/Stilization/HomeSection.styled';
 
 const HomePage = () => {
   return (
-    <Container>
-      <p>This is Home page!!!</p>
-    </Container>
+    <Section >
+      <Container>
+        <Title >Phonebook</Title>
+      </Container>
+    </Section>
   );
 };
 export default HomePage;

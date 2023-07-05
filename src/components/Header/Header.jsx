@@ -1,17 +1,22 @@
-import { NavLink } from 'react-router-dom';
 import { HeaderStyled } from './Header.styles';
 import { Container } from 'components/Container/Container';
-
+import { Navigation } from './Navigation/Navigation';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
+import { UserMenu } from './UserMenu/UserMenu';
+import { AuthMenu } from './AuthMenu/AuthMenu';
+import { selectLoading } from 'redux/auth/selectors';
+import { Loader } from 'components/Loader/Loader';
 export const Header = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
   return (
     <HeaderStyled>
       <Container>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/contacts">Contacts</NavLink>
-          <NavLink to="/register">Register</NavLink>
-          <NavLink to="/login">Log in</NavLink>
-        </nav>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+          <Navigation />
+          {isLoggedIn ? <UserMenu /> : <AuthMenu />}
+        </div>
       </Container>
     </HeaderStyled>
   );

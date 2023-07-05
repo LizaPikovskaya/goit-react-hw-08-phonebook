@@ -27,9 +27,9 @@ export const Contacts = () => {
       {error && <p>{error}</p>}
       {items && (
         <List>
-          {visibleUsers?.map(({ id, name, phone }) => (
+          {visibleUsers?.map(({ id, name, number }) => (
             <li key={id}>
-              {name}: {phone}
+              {name}: {number}
               <button
                 type="button"
                 onClick={() => {
