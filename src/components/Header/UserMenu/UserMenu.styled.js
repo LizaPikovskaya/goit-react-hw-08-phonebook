@@ -17,10 +17,10 @@ export const Wrapper = styled.div`
     justify-content: center;
     gap: 5px;
     min-width: 80px;
-    padding: 10px ;
+    padding: 0 10px ;
     border-radius: 5px;
     border: none;
-    background-color: lightblue;
+    background-color: transparent;
     cursor: pointer;
     transition: 300ms linear;
     font-family: 'Helvetica Neue';
@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
     font-size: 18px;
 
     &:hover {
-      background-color: #4682b4;
+      /* background-color: #4682b4; */
       color: white;
     }
   }
