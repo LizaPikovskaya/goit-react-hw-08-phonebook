@@ -9,6 +9,8 @@ import { selectIsRefreshing } from 'redux/auth/selectors';
 import { Loader } from './Loader/Loader';
 import PrivateRoute from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
+import { ToastContainer } from 'react-toastify';
+
 
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
@@ -23,6 +25,7 @@ export const App = () => {
   }, [dispatch]);
   return (
     <>
+      <ToastContainer />
       <GlobalStyle />
       {isRefreshing ? (
         <Loader />

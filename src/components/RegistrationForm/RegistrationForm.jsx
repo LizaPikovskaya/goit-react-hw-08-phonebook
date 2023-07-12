@@ -5,16 +5,19 @@ import {
   Input,
   Label,
 } from '../LoginForm/LoginForm.styled';
-// import { object, string, number, date, InferType } from 'yup';
+import {  string} from 'yup';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/thunk';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+ import * as Yup from 'yup';
 
-// const registrationSchema = object({
-//   username: string().min(2, 'Too Short!').required(),
-//   email: string().email('Invalid email').required(),
-//   password: string().min(8, 'Too Short!').max(16, 'Too Long!').required(),
-// });
+
+const registrationSchema = Yup.object({
+  username: string().min(5, 'Too Short!').required(),
+  email: string().email('Invalid email').required(),
+  password: string().min(7, 'Too Short! Minimum 7 symbols.').max(16, 'Too Long!').required(),
+});
 const RegistrationForm = () => {
   const dispatch = useDispatch();
   const handleSubmit = (values, action) => {
@@ -22,16 +25,15 @@ const RegistrationForm = () => {
     dispatch(register(values))
       .unwrap()
       .then(() => toast.success('Registration successfully'))
-      .catch(() => toast.error('Something go wrong...'));
+      .catch(() => toast.error('Something went wrong...Try again.'));
     action.resetForm();
   }
   return (
     <>
-      <ToastContainer />
       <Formik
         initialValues={{ name: '', email: '', password: '' }}
         onSubmit={handleSubmit}
-        // validationSchema={registrationSchema}
+        validationSchema={registrationSchema}
       >
         <FormStyled autoComplete="off">
           <Label>

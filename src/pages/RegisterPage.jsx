@@ -1,6 +1,6 @@
 import { Container } from 'components/Container/Container';
 import RegistratonForm from 'components/RegistrationForm/RegistrationForm';
-import { MainTitle, Title } from './ContactsPage.styled';
+import { MainTitle } from './ContactsPage.styled';
 
 const RegisterPage = () => {
   return (

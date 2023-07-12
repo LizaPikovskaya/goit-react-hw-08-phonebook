@@ -5,8 +5,7 @@ import { useSelector } from 'react-redux';
 import { selectIsLoggedIn } from 'redux/auth/selectors';
 import { UserMenu } from './UserMenu/UserMenu';
 import { AuthMenu } from './AuthMenu/AuthMenu';
-import { selectLoading } from 'redux/auth/selectors';
-import { Loader } from 'components/Loader/Loader';
+
 export const Header = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 

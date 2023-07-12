@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Button, Label, Wrapper } from './Phonebook.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { selectContacts } from 'redux/contacts/selectors';
 import { addContact } from 'redux/contacts/thunk';
-import { AddingLoader, Loader } from 'components/Loader/Loader';
+import { AddingLoader } from 'components/Loader/Loader';
 
 export const Phonebook = () => {
   const [name, setName] = useState('');
@@ -46,8 +46,6 @@ export const Phonebook = () => {
   };
   return (
     <Wrapper>
-      <ToastContainer />
-
       <form onSubmit={handleOnSubmit}>
         <Label>
           <span>Name</span>
