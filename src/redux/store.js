@@ -37,4 +37,4 @@ export const store = configureStore({
   middleware,
 });
 
-const persistor = persistStore(store);
+export const persistor = persistStore(store);
