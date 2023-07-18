@@ -14,9 +14,12 @@ import { toast } from 'react-toastify';
 
 
 const registrationSchema = Yup.object({
-  username: string().min(5, 'Too Short!').required(),
+  name: string().min(5, 'Too Short!').required(),
   email: string().email('Invalid email').required(),
-  password: string().min(7, 'Too Short! Minimum 7 symbols.').max(16, 'Too Long!').required(),
+  password: string()
+    .min(7, 'Too Short! Minimum 7 symbols.')
+    .max(16, 'Too Long!')
+    .required(),
 });
 const RegistrationForm = () => {
   const dispatch = useDispatch();
